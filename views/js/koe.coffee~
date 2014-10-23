@@ -1,0 +1,20 @@
+
+task = () ->
+  console.log "taski"
+  $.ajax
+    url: "/ajax" 
+    type: "POST"
+    data: 123
+    success: (data) ->
+      console.log "sender got ",data
+      obj = jQuery.parseJSON(data)
+      console.log "sender got ",obj  
+      $("#tick").html(obj.tick)
+
+$(document).ready ->
+  console.log "tadaa"
+  timer=setTimeout (->
+    task()
+  ), 500
+			  
+  

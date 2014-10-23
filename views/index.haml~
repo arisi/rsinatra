@@ -1,0 +1,13 @@
+!!!
+%html{lang: "fi"}
+  %head
+    %script{:src => "http://s.debet.fi/js/jquery-1.8.3.min.js"}
+    %script{:src => "/js/koe.js", :type => "text/javascript"}
+  %body
+    %h1
+      Hieno Sivu 
+    %hr
+    %p
+      Tikin arvo juuri nyt on: #{$tick}
+    %hr
+    %p se oli siinä
