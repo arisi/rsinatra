@@ -24,6 +24,10 @@ post "/ajax" do
   {tick: $tick,stamp:Time.now.to_i}.to_json
 end
 
+get "/ajax" do
+  {tick: $tick,stamp:Time.now.to_i}.to_json
+end
+
 get '/js/:name.js' do
   content_type 'text/javascript', :charset => 'utf-8'
   coffee(:"js/#{params[:name]}")
