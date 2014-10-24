@@ -1,4 +1,6 @@
-require "execjs"
+#!/usr/bin/env ruby
+#encoding: UTF-8
+
 require 'sinatra'
 require 'haml'
 require 'coffee_script'
