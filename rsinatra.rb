@@ -27,10 +27,8 @@ get '/' do
   haml :index
 end
 
-["/ajax"].each do |path|
-  get_or_post path do
-    {tick: $redis.get("tick"), spi: $redis.get("spi"), stamp:Time.now.to_i}.to_json
-  end
+get_or_post "/ajax" do
+  {tick: $redis.get("tick"), spi: $redis.get("spi"), stamp:Time.now.to_i}.to_json
 end
 
 get '/js/:name.js' do
