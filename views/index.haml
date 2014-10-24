@@ -5,13 +5,16 @@
     %script{:src => "/js/koe.js", :type => "text/javascript"}
   %body
     %h1
-      Hieno Sivu 
+      Greetings from R&pi;
     %hr
     %p
-      Tikin arvo oli alussa: #{$tick}
+      Tick value at start: #{$tick} and stamp: #{Time.now.to_i}
     %p 
-      ja nyt se on:
-    %p#tick
-      ?
+      and current value via Ajax::
+      %span#tick
+        ?
+      and timestamp:
+      %span#stamp
+        ?
     %hr
-    %p se oli siinä
+    %p{style: "font-size: 12px;"} That's all folks!

@@ -2,7 +2,15 @@ require "execjs"
 require 'sinatra'
 require 'haml'
 require 'coffee_script'
-set :bind => "0.0.0.0", :port => 6969
+
+$port=6969
+if ARGV[0]
+  set :haml, :ugly => :true
+  set :haml, :remove_whitespace => :true
+  set :environment, :production 
+  $port=ARGV[0]
+end
+set :bind => "0.0.0.0", :port => $port
 
 $tick=0
 
@@ -11,7 +19,7 @@ get '/' do
 end
 
 post "/ajax" do
-  {tick: $tick}.to_json
+  {tick: $tick,stamp:Time.now.to_i}.to_json
 end
 
 get '/js/:name.js' do
@@ -21,7 +29,6 @@ end
 
 Thread.new {
   loop do
-    puts "tick #{$tick}"
     sleep 1
     $tick+=1
   end
