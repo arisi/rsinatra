@@ -14,3 +14,6 @@ cd rsinatra
 bundle
 ./rsinatra.rb 
 ```
+
+provided as install.sh
+
