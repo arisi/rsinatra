@@ -1,11 +1,10 @@
-rsinatra
-========
+#rsinatra
+
 
 minimal sinatra setup for raspberry pi
 
 
-Installing on raspbian
-======================
+### Installing on raspbian
 
 ```
 sudo apt-get install build-essential zlib1g-dev libssl-dev libreadline-dev git-core curl libyaml-dev -y  ruby-dev nodejs
