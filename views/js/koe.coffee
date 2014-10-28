@@ -6,6 +6,7 @@ task = () ->
     success: (data) ->
       obj = jQuery.parseJSON(data)
       $("#tick").html(obj.tick)
+      $("#temp").html(obj.temp)
       $("#stamp").html(obj.stamp)
 
 $(document).ready ->

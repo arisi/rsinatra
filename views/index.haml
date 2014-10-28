@@ -5,15 +5,20 @@
     %script{:src => "/js/koe.js", :type => "text/javascript"}
   %body
     %h1
-      Greetings from R&pi;
+      AURINKOSÄÄDIN
     %hr
     %p
-      Tick value at start: #{$tick} and stamp: #{Time.now.to_i}
+      Aikaleima: #{Time.now.to_i}
     %p 
-      and current value via Ajax:
+      Saatu energia =
       %span#tick
         ?
-      and timestamp:
+    %p  
+      Lämpötila =
+      %span#temp
+        ?
+    %p
+      astetta sekä aikaleima:
       %span#stamp
         ?
     %hr

@@ -6,7 +6,7 @@ require 'haml'
 require 'coffee_script'
 require 'redis'
 
-$redis = Redis.new(:host => '20.20.20.215' ) #the address of rpoll's redis server
+$redis = Redis.new(:host => '127.0.0.1' ) #the address of rpoll's redis server '20.20.20.215'
 
 
 $port=6969
@@ -28,7 +28,7 @@ get '/' do
 end
 
 get_or_post "/ajax" do
-  {tick: $redis.get("tick"), spi: $redis.get("spi"), stamp:Time.now.to_i}.to_json
+  {tick: $redis.get("KWH"), temp: $redis.get("PANNU"), stamp:Time.now.to_i}.to_json
 end
 
 get '/js/:name.js' do
